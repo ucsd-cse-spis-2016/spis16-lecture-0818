@@ -1,0 +1,57 @@
+Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 12:54:16) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+== RESTART: /Users/pconrad/github/spis16-lecture-0818/non_alcoholic_data.py ==
+Reading Data...
+done
+>>> data[0]
+{'beer/style': 'Low Alcohol Beer', 'beer/ABV': 0.1, 'beer/beerId': '59239', 'review/timeStruct': {'wday': 5, 'isdst': 0, 'mday': 2, 'hour': 21, 'min': 31, 'sec': 21, 'year': 2011, 'yday': 183, 'mon': 7}, 'review/aroma': 3.0, 'review/appearance': 3.5, 'review/timeUnix': 1309642281, 'review/palate': 3.0, 'review/taste': 3.5, 'beer/name': 'Amstel Malt', 'beer/brewerId': '163', 'review/overall': 3.0, 'review/text': "I had this 'beer' at a beachbar in IJmuiden today. Had to drive back home so i needed something without alcohol. This was a good drink for that purpose.\t\tPoured in the original Amstel glass this beer looks quit ok to be honest. Smell in not spectacular but for a malt beer ok. Watery as expected.\t\tSome sweetness in this beer. Drinkable when you have to drive....", 'user/profileName': 'Brabander'}
+>>> data[0]
+{'beer/style': 'Low Alcohol Beer', 'beer/ABV': 0.1, 'beer/beerId': '59239', 'review/timeStruct': {'wday': 5, 'isdst': 0, 'mday': 2, 'hour': 21, 'min': 31, 'sec': 21, 'year': 2011, 'yday': 183, 'mon': 7}, 'review/aroma': 3.0, 'review/appearance': 3.5, 'review/timeUnix': 1309642281, 'review/palate': 3.0, 'review/taste': 3.5, 'beer/name': 'Amstel Malt', 'beer/brewerId': '163', 'review/overall': 3.0, 'review/text': "I had this 'beer' at a beachbar in IJmuiden today. Had to drive back home so i needed something without alcohol. This was a good drink for that purpose.\t\tPoured in the original Amstel glass this beer looks quit ok to be honest. Smell in not spectacular but for a malt beer ok. Watery as expected.\t\tSome sweetness in this beer. Drinkable when you have to drive....", 'user/profileName': 'Brabander'}
+>>> type(data[0])
+<type 'dict'>
+>>> data[0].keys()
+['beer/style', 'beer/ABV', 'beer/beerId', 'review/timeStruct', 'review/aroma', 'review/appearance', 'review/timeUnix', 'review/palate', 'review/taste', 'beer/name', 'beer/brewerId', 'review/overall', 'review/text', 'user/profileName']
+>>> data[0].values()
+['Low Alcohol Beer', 0.1, '59239', {'wday': 5, 'isdst': 0, 'mday': 2, 'hour': 21, 'min': 31, 'sec': 21, 'year': 2011, 'yday': 183, 'mon': 7}, 3.0, 3.5, 1309642281, 3.0, 3.5, 'Amstel Malt', '163', 3.0, "I had this 'beer' at a beachbar in IJmuiden today. Had to drive back home so i needed something without alcohol. This was a good drink for that purpose.\t\tPoured in the original Amstel glass this beer looks quit ok to be honest. Smell in not spectacular but for a malt beer ok. Watery as expected.\t\tSome sweetness in this beer. Drinkable when you have to drive....", 'Brabander']
+>>> data[0].values()[-2]
+"I had this 'beer' at a beachbar in IJmuiden today. Had to drive back home so i needed something without alcohol. This was a good drink for that purpose.\t\tPoured in the original Amstel glass this beer looks quit ok to be honest. Smell in not spectacular but for a malt beer ok. Watery as expected.\t\tSome sweetness in this beer. Drinkable when you have to drive...."
+>>> data[0]
+{'beer/style': 'Low Alcohol Beer', 'beer/ABV': 0.1, 'beer/beerId': '59239', 'review/timeStruct': {'wday': 5, 'isdst': 0, 'mday': 2, 'hour': 21, 'min': 31, 'sec': 21, 'year': 2011, 'yday': 183, 'mon': 7}, 'review/aroma': 3.0, 'review/appearance': 3.5, 'review/timeUnix': 1309642281, 'review/palate': 3.0, 'review/taste': 3.5, 'beer/name': 'Amstel Malt', 'beer/brewerId': '163', 'review/overall': 3.0, 'review/text': "I had this 'beer' at a beachbar in IJmuiden today. Had to drive back home so i needed something without alcohol. This was a good drink for that purpose.\t\tPoured in the original Amstel glass this beer looks quit ok to be honest. Smell in not spectacular but for a malt beer ok. Watery as expected.\t\tSome sweetness in this beer. Drinkable when you have to drive....", 'user/profileName': 'Brabander'}
+>>> data[0]['review/text']
+"I had this 'beer' at a beachbar in IJmuiden today. Had to drive back home so i needed something without alcohol. This was a good drink for that purpose.\t\tPoured in the original Amstel glass this beer looks quit ok to be honest. Smell in not spectacular but for a malt beer ok. Watery as expected.\t\tSome sweetness in this beer. Drinkable when you have to drive...."
+>>> len(data)
+1201
+>>> smalldata=data[:10]
+>>> len(smalldata)
+10
+>>> smalldata[0]['review/text']
+"I had this 'beer' at a beachbar in IJmuiden today. Had to drive back home so i needed something without alcohol. This was a good drink for that purpose.\t\tPoured in the original Amstel glass this beer looks quit ok to be honest. Smell in not spectacular but for a malt beer ok. Watery as expected.\t\tSome sweetness in this beer. Drinkable when you have to drive...."
+>>> tenReviewsText = [d['review/text'] for d in smalldata ]
+>>> type(tenReviewsText)
+<type 'list'>
+>>> type(tenReviewsText[0])
+<type 'str'>
+>>> len(tenReviewsText)
+10
+>>> type(tenReviewsText[0])
+<type 'str'>
+>>> type(tenReviewsText[1])
+<type 'str'>
+>>> type(tenReviewsText[2])
+<type 'str'>
+>>> map(type,tenReviewsText)
+[<type 'str'>, <type 'str'>, <type 'str'>, <type 'str'>, <type 'str'>, <type 'str'>, <type 'str'>, <type 'str'>, <type 'str'>, <type 'str'>]
+>>> nums = [1,2,3,4,5]
+>>> def f(x):
+	 return x*x
+
+	
+>>> f(3)
+9
+>>> map(f,nums)
+[1, 4, 9, 16, 25]
+>>> tenReviewsText
+["I had this 'beer' at a beachbar in IJmuiden today. Had to drive back home so i needed something without alcohol. This was a good drink for that purpose.\t\tPoured in the original Amstel glass this beer looks quit ok to be honest. Smell in not spectacular but for a malt beer ok. Watery as expected.\t\tSome sweetness in this beer. Drinkable when you have to drive....", "30cl bottle poured into a pint glass.\t\tAccidentally ordered this not knowing it was non-alcoholic, oh well! Pours a very crisp light yellow with no head at all, very bland looking Nose keeps this up, super tame and light, not much here to speak of.\t\tTaste isn't great but it's super easy drinking, nice and malty and toasty - think vienna lager or Marzen. A bit buttery on the finish but that's it. Honestly it's better than some american macro light lagers.", '33 cl can from my local grocery store (Hemkp).\t\tClear light yellow straw color. \tInitally big white bubbly headm fairly lasting. \tA bit malty scent, smells watery, if thats possible...\tDistinct watery mouthfel. hard to find much else. \tA bit malty flavour, some fresh fruitiness in the aftertaste. \tLow to no bitterness.', 'The colour is yellow with a tint of gold. The large white compact foam dissolves into a two finger thick foam. \t\tThe smell is kind of weak with some dry malt and a chemical bitterness.\t\tThe carbonation is fresh with medium sized bubbles. It is rather short.\t\tThe taste is weak; there is almost no taste of malt or any body at all. The hops are dry and artificial. The aftertaste is watery with some sweet and bitter notes.\t\tThis is a very cheap and boring low alcohol beer.', '500ml bottle. Pours clear gold with a nice white head that lasts and leaves good lacing. Smells fairly sweet; almost exactly like straw. A bit earthy. Tastes of pils malt, with a strong cereal character. Like, plain Cheerios. Not much else going on there. Slight hop bitterness at the end. A bit unpleasant, actually, in the middle. Light body and decent carbonation. This one was interesting. Not totally offensive, and surely the nicest "free" beer I\'ve had, but not anywhere near good. Reminds me of what you would get if you had a bowl of cereal and used Perrier instead of milk, ate the cereal, and then drank what was left over.', "Was quite surprised by this. Julel is a very low alcohol childrens beer. The aroma was of cherry and that lambic tang and the flavor, to my surprise, was much the same. It very much is like a cherry Lambic Light. Surprisingly drinkable due mostly to it's overall subdued flavor profile. Had a solid feeling mouthfeel and very little aftertaste.", 'Another instance of this unique Danish beer style: A dark low alcohol wheat beer spiced with sugar and liquorice. \t\tThe colour is black-brown; the liquid clear. The thick brown head is compact; it sinks to a lid leaving almost none lacing. \t\tThe smell is very roasted with some sweet notes of liquorice, beef stock and a hint of nutmeg.\t\tThe taste is sweet with some roasted malt, liquorice and gravy. There are some very fragile sour notes too. The aftertaste is sweet in an artificial way with some hints of mild oriental spices and candy. \t\tThe carbonation is mild with lots and lots of minimal bubbles that create some foam in the mouth. The liquid is rather thick and a bit sticky.\t\tA good example of this style, I think.', 'At the time of this review, this beer is #9 on the "Top Beers - Low Alcohol Beer" list on beeradvocate.com. $0.79 for a tick? Why not? 12 ounce bottle poured into a globe glass. How bad could it be?\t\tBeer is clear, yellow, lightly carbonated, big white head with low retention, some lacing, looks fine.\t\tAroma is grainy, sweet, kind of like malt liquor.\t\tSkunky, sweet, thin, grainy aftertaste, it reminds me a lot of a couple of adjunct lagers out there. Not worth a second look but it is not as bad as most out there. Fortunately my body can currently tolerate alcohol so Im going to go get a beverage that has some. NEXT!', "My go to when I went dry for a few months last year. \t\tA: Big pour. Fairly lively head. Standard macro color. As one user put...darker than a BMC. Still, it's that straw yellow we all know and expect. Head retention is meh. Lacing is average. \t\tS: Metallic, grassy, husked grain, mild bit of hop presence. \t\tT: Starts off bitter and clean, ends with husk grain notes and a cider-like finish.\t\tM: Pretty seltzer like. Body is minimal. \t\tO: I'm scoring this beer fairly well. While pretty mediocre as far as beer goes, I think this beer is stellar when compared to other NA's on the market. This one is about as close as I've come. So I'll meet in the middle on scoring. Not great overall, but great for the category.", 'My brother\'s pregnant wife picked up some of these while we were at the outer banks so she could still have a beer. She gave me the leftovers (maybe that\'s a sign?)\t\tBottle poured into a pint.\t\tA: Looks pretty beer like. A mass produced yellow color that\'s a little darker than your standard Bud and what not, but pretty typical color. Better lacing and head than I have seen on a lot of American macros and Euro lagers for that matter. Doesn\'t look to bad.\t\tS: Skunky, grassy, hayfield, sweet, and mildly bitter.\t\tT: This beer has a very unusual taste. A strange sweetness is up front followed by an empty and bland nothingness. It is very grassy in flavor.\t\tM: Average.\t\tO: This is the first time I have ever had N/A beer, or less than 0.5% beer as it actually is. If I once was a serious alcoholic and could no longer have real beer due to health issues or whatever, I would gratefully drink this, but I would try the other N/A beers out there, they might be better. Either way it is pretty cool they at least make this so someone can enjoy a "beer" if they can\'t have alcohol.']
+>>> 
